@@ -19,12 +19,7 @@ public class Maquiagem extends Produto {
 
     @Override
     public String toString(){
-        return "| Código: " + getCodigo() +" - " +
-                "Nome: " + getNome() + " - " +
-                "Marca: " + getMarca() + " - " +
-                "Quantidade: " + getQuantidade() + " - " +
-                "Peso: " + getPeso() + "g(ml) - " +
-                "Valor: R$" + getValor() + " - " +
-                "Tipo: " + getTipo() + " |";
+        return String.format("Código: %d | Nome: %s | Marca: %s | Quantidade: %d | Peso: %.2fg(ml) | Valor: R$ %.2f | Tipo: %s",
+                getCodigo(), getNome(), getMarca(), getQuantidade(), getPeso(), getValor(), getTipo());
     }
 }

@@ -8,6 +8,14 @@ public class MaquiagemUseCase {
 
     private static ArrayList<Maquiagem> listaMaquiagem = new ArrayList<>();
 
+    static {
+        listaMaquiagem.add(new Maquiagem(6, "Base Líquida", "Boticário", 20, 0.05, 45.9, "Base"));
+        listaMaquiagem.add(new Maquiagem(7, "Batom Matte", "Eudora", 50, 0.02, 29.9, "Batom"));
+        listaMaquiagem.add(new Maquiagem(8, "Máscara de Cílios", "Boticário", 30, 0.03, 39.9, "Máscara de Cílios"));
+        listaMaquiagem.add(new Maquiagem(9, "Sombra Compacta", "Eudora", 40, 0.01, 22.5, "Sombra"));
+        listaMaquiagem.add(new Maquiagem(10, "Delineador Líquido", "Boticário", 25, 0.02, 35.0, "Delineador"));
+    }
+
     public static String adicionarMaquiagem(Maquiagem maquiagem) {
         listaMaquiagem.add(maquiagem);
         return "Maquiagem adicionada com sucesso!";

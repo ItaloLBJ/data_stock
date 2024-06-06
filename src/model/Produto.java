@@ -69,12 +69,8 @@ public class Produto {
 
     @Override
     public String toString() {
-        return "| Código: " + getCodigo() +" - " +
-                "Nome: " + getNome() + " - " +
-                "Marca: " + getMarca() + " - " +
-                "Quantidade: " + getQuantidade() + " - " +
-                "Volume: " + getPeso() + "ml - " +
-                "Valor: R$" + getValor() + " |";
+        return String.format("Código: %d | Nome: %s | Marca: %s | Quantidade: %d | Volume: %.2fml | Valor: R$ %.2f",
+                getCodigo(), getNome(), getMarca(), getQuantidade(), getPeso(), getValor());
         }
 
 }

@@ -8,6 +8,14 @@ public class ProdutoUseCase {
 
     private static ArrayList<Produto> listaProdutos = new ArrayList<>();
 
+    static {
+        listaProdutos.add(new Produto(1, "Creme Hidratante", "Boticário", 50, 0.3, 25.5));
+        listaProdutos.add(new Produto(2, "Shampoo Nutritivo", "Eudora", 30, 0.5, 18.9));
+        listaProdutos.add(new Produto(3, "Condicionador Nutritivo", "Eudora", 30, 0.5, 20.9));
+        listaProdutos.add(new Produto(4, "Sabonete Líquido", "Boticário", 100, 0.2, 12.0));
+        listaProdutos.add(new Produto(5, "Loção Corporal", "Eudora", 40, 0.4, 30.0));
+    }
+
     public static String adicionarProduto(Produto produto) {
         listaProdutos.add(produto);
         return "Produto adicionado com sucesso!";

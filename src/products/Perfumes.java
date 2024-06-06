@@ -4,29 +4,26 @@ import model.Produto;
 
 public class Perfumes extends Produto {
 
-    private String fragancia;
+    private String fragrancia;
 
-    public String getFrangancia() {
-        return fragancia;
+    public String getFragrancia() {
+        return fragrancia;
     }
 
-    public void setFrangancia(String frangancia) {
-        this.fragancia = frangancia;
+    public void setFragrancia(String fragrancia) {
+        this.fragrancia = fragrancia;
     }
 
-    public Perfumes(int codigo, String nome, String marca, int quantidade, double peso, double valor, String fragancia) {
+    public Perfumes(int codigo, String nome, String marca, int quantidade, double peso, double valor, String fragrancia) {
         super(codigo, nome, marca, quantidade, peso, valor);
-        this.fragancia = fragancia;
+        this.fragrancia = fragrancia;
     }
 
     @Override
     public String toString(){
-        return "| Código: " + getCodigo() +" - " +
-                "Nome: " + getNome() + " - " +
-                "Marca: " + getMarca() + " - " +
-                "Quantidade: " + getQuantidade() + "ml - " +
-                "Volume: " + getPeso() + "ml - " +
-                "Valor: R$" + getValor() + " - " +
-                "Fragrância: " + getFrangancia() + " |";
+        return String.format("Código: %d | Nome: %s | Marca: %s | Quantidade: %d | Volume: %.2fml | Valor: R$ %.2f | Fragrância: %s",
+                getCodigo(), getNome(), getMarca(), getQuantidade(), getPeso(), getValor(), getFragrancia());
+
+
     }
 }

@@ -7,6 +7,14 @@ import java.util.ArrayList;
 public class PerfumesUseCase {
     private static ArrayList<Perfumes> listaPerfumes = new ArrayList<>();
 
+    static {
+        listaPerfumes.add(new Perfumes(11, "Perfume Floral", "Boticário", 15, 0.3, 120.9, "Floral"));
+        listaPerfumes.add(new Perfumes(12, "Perfume Amadeirado", "Eudora", 10, 0.25, 150.0, "Amadeirado"));
+        listaPerfumes.add(new Perfumes(13, "Perfume Cítrico", "Boticário", 20, 0.28, 135.5, "Cítrico"));
+        listaPerfumes.add(new Perfumes(14, "Perfume Oriental", "Eudora", 8, 0.32, 180.75, "Oriental"));
+        listaPerfumes.add(new Perfumes(15, "Perfume Frutado", "Boticário", 12, 0.27, 140.4, "Frutado"));
+    }
+
     public static String adicionarPerfume(Perfumes perfume) {
         listaPerfumes.add(perfume);
         return "Perfume adicionado com sucesso! ";

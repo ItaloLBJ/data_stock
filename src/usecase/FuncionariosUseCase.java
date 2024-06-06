@@ -8,6 +8,12 @@ public class FuncionariosUseCase {
 
     private static ArrayList<Funcionarios> listaFuncionarios = new ArrayList<>();
 
+    static {
+        listaFuncionarios.add(new Funcionarios(1, "Gilson", "Gerente"));
+        listaFuncionarios.add(new Funcionarios(2, "Italo", "Assistente"));
+        listaFuncionarios.add(new Funcionarios(3, "Adrian", "Analista"));
+    }
+
     public static String adicionarFuncionario(Funcionarios funcionario) {
         listaFuncionarios.add(funcionario);
         return "Funcionário adicionado com sucesso!";

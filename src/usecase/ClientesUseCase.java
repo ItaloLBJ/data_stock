@@ -1,12 +1,17 @@
 package usecase;
 
 import model.Clientes;
-
 import java.util.ArrayList;
 
 public class ClientesUseCase {
 
     private static ArrayList<Clientes> listaClientes = new ArrayList<>();
+
+    static {
+        listaClientes.add(new Clientes(1, "Dona Zefinha", "Imbiribeira"));
+        listaClientes.add(new Clientes(2, "Thamires", "Candeias"));
+        listaClientes.add(new Clientes(3, "Joelma", "Caxangá"));
+    }
 
     public static String adicionarClientes(Clientes clientes) {
         listaClientes.add(clientes);
