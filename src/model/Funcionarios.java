@@ -36,6 +36,6 @@ public class Funcionarios {
     }
     @Override
     public String toString() {
-        return id + "-" + nome + "-" + cargo;
+        return String.format("Id do Funcionário: %s | Nome do Funcionário: %s | Cargo: %s", id, nome, cargo);
     }
 }

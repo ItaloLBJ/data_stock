@@ -38,5 +38,7 @@ public class Clientes {
     }
 
     @Override
-    public String toString() { return numeroPedido + "-" + nome + "-" + endereco;}
+    public String toString() {
+        return String.format("Número do pedido: %s | Nome do cliente: %s | Endereço: %s", numeroPedido, nome, endereco);
+    }
 }
