@@ -17,6 +17,9 @@ public class ProdutoUseCase {
     }
 
     public static String adicionarProduto(Produto produto) {
+        if (produtoExiste(produto.getCodigo())) {
+            return "Produto com este código já existe!";
+        }
         listaProdutos.add(produto);
         return "Produto adicionado com sucesso!";
     }
@@ -38,8 +41,11 @@ public class ProdutoUseCase {
 
     public static boolean apagarProduto(int codigo) {
         for (int i = 0; i < listaProdutos.size(); i++) {
-            if (listaProdutos.get(i).getCodigo() == codigo) listaProdutos.remove(i);
-            return true;
+            if (listaProdutos.get(i).getCodigo() == codigo){
+                listaProdutos.remove(i);
+                return true;
+            }
+
         }
         return false;
     }

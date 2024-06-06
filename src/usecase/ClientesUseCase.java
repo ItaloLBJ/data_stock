@@ -14,6 +14,9 @@ public class ClientesUseCase {
     }
 
     public static String adicionarClientes(Clientes clientes) {
+        if (clienteExiste(clientes.getNumeroPedido())) {
+            return "Cliente com este número de pedido já existe!";
+        }
         listaClientes.add(clientes);
         return "Cliente adicionado com sucesso!";
     }
@@ -35,8 +38,11 @@ public class ClientesUseCase {
 
     public static boolean apagarCliente(int numeroPedido) {
         for (int i = 0; i < listaClientes.size(); i++) {
-            if (listaClientes.get(i).getNumeroPedido() == numeroPedido) listaClientes.remove(i);
-            return true;
+            if (listaClientes.get(i).getNumeroPedido() == numeroPedido) {
+                listaClientes.remove(i);
+                return true;
+            }
+
         }
         return false;
     }

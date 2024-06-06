@@ -15,9 +15,12 @@ public class PerfumesUseCase {
         listaPerfumes.add(new Perfumes(15, "Perfume Frutado", "Boticário", 12, 0.27, 140.4, "Frutado"));
     }
 
-    public static String adicionarPerfume(Perfumes perfume) {
-        listaPerfumes.add(perfume);
-        return "Perfume adicionado com sucesso! ";
+    public static String adicionarPerfume(Perfumes perfumes) {
+        if (perfumeExiste(perfumes.getCodigo())) {
+            return "Perfume com este código já existe!";
+        }
+        listaPerfumes.add(perfumes);
+        return "Perfume adicionado com sucesso!";
     }
 
     public static String mostrarPerfumes() {
@@ -45,8 +48,11 @@ public class PerfumesUseCase {
 
     public static boolean removerPerfume(int codigo) {
         for (int i = 0; i < listaPerfumes.size(); i++) {
-            if (listaPerfumes.get(i).getCodigo() == codigo) listaPerfumes.remove(i);
-            return true;
+            if (listaPerfumes.get(i).getCodigo() == codigo) {
+                listaPerfumes.remove(i);
+                return true;
+            }
+
         }
         return false;
     }

@@ -14,8 +14,11 @@ public class FuncionariosUseCase {
         listaFuncionarios.add(new Funcionarios(3, "Adrian", "Analista"));
     }
 
-    public static String adicionarFuncionario(Funcionarios funcionario) {
-        listaFuncionarios.add(funcionario);
+    public static String adicionarFuncionario(Funcionarios funcionarios) {
+        if (funcionarioExiste(funcionarios.getId())) {
+            return "Funcionário com este id já existe!";
+        }
+        listaFuncionarios.add(funcionarios);
         return "Funcionário adicionado com sucesso!";
     }
 
@@ -43,8 +46,11 @@ public class FuncionariosUseCase {
 
     public static boolean dispensarFuncionario(int id) {
         for (int i = 0; i < listaFuncionarios.size(); i++) {
-            if (listaFuncionarios.get(i).getId() == id) listaFuncionarios.remove(i);
-            return true;
+            if (listaFuncionarios.get(i).getId() == id) {
+                listaFuncionarios.remove(i);
+                return true;
+            }
+
         }
         return false;
     }

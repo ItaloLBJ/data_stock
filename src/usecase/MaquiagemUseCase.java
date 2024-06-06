@@ -16,7 +16,11 @@ public class MaquiagemUseCase {
         listaMaquiagem.add(new Maquiagem(10, "Delineador Líquido", "Boticário", 25, 0.02, 35.0, "Delineador"));
     }
 
+
     public static String adicionarMaquiagem(Maquiagem maquiagem) {
+        if (maquiagemExiste(maquiagem.getCodigo())) {
+            return "Maquiagem com este código já existe!";
+        }
         listaMaquiagem.add(maquiagem);
         return "Maquiagem adicionada com sucesso!";
     }
@@ -45,8 +49,11 @@ public class MaquiagemUseCase {
 
     public static boolean removerMaquiagem(int codigo) {
         for (int i = 0; i < listaMaquiagem.size(); i++){
-            if (listaMaquiagem.get(i).getCodigo() == codigo) listaMaquiagem.remove(i);
-            return true;
+            if (listaMaquiagem.get(i).getCodigo() == codigo) {
+                listaMaquiagem.remove(i);
+                return true;
+            }
+
         }
         return false;
     }
